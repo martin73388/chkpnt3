@@ -12,6 +12,12 @@ int main(int argc, char** argv) {
     agv_robot_info.set_firmware_version("3.5.8");
     agv_robot_info.set_maximum_payload("100 Kg");
 
+    // Définir les valeurs pour le moniteur hydraulique
+    agv_robot_info.set_hydraulic_oil_temperature("45C");
+    agv_robot_info.set_hydraulic_oil_tank_fill_level("100%");
+    agv_robot_info.set_hydraulic_oil_pressure("250 bar");
+
+
     ros::Rate loop_rate(1);  // Fréquence de publication : 1 Hz
     while (ros::ok()) {
         agv_robot_info.publish_data();

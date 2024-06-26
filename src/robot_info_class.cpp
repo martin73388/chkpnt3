@@ -4,6 +4,7 @@
 
 class RobotInfo {
 public:
+
     RobotInfo(ros::NodeHandle& nh) : nh_(nh) {
         // Initialiser le publisher
         pub_ = nh_.advertise<robotinfo_msgs::RobotInfo10Fields>("robot_info", 10);
@@ -24,6 +25,7 @@ public:
     void set_serial_number(const std::string& serial) { serial_number = serial; }
     void set_ip_address(const std::string& ip) { ip_address = ip; }
     void set_firmware_version(const std::string& firmware) { firmware_version = firmware; }
+
 
 protected:
     ros::NodeHandle nh_;
